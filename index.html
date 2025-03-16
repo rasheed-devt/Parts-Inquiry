@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supplier Inquiry System</title>
+</head>
+<body>
+    <h1>Supplier Inquiry System</h1>
+
+    <!-- Login Form -->
+    <div id="loginDiv">
+        <input type="email" id="email" placeholder="Enter Email">
+        <input type="password" id="password" placeholder="Enter Password">
+        <button onclick="login()">Login</button>
+        <button onclick="register()">Register</button>
+    </div>
+
+    <!-- Inquiry Submission (Admin) -->
+    <div id="inquiryForm" style="display:none;">
+        <h2>Submit Inquiry</h2>
+        <input type="text" id="model" placeholder="Model">
+        <input type="text" id="brand" placeholder="Brand">
+        <input type="text" id="make" placeholder="Make">
+        <input type="text" id="chassisNumber" placeholder="Chassis Number">
+        <input type="text" id="partName" placeholder="Part Name">
+        <input type="text" id="description" placeholder="Description">
+        <input type="number" id="price" placeholder="Price">
+        <button onclick="submitInquiry()">Submit Inquiry</button>
+    </div>
+
+    <!-- Supplier Inquiry List -->
+    <div id="inquiries">
+        <h2>Inquiries</h2>
+        <table border="1">
+            <tr>
+                <th>Model</th>
+                <th>Brand</th>
+                <th>Make</th>
+                <th>Chassis Number</th>
+                <th>Part Name</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>Status</th>
+                <th>Update</th>
+            </tr>
+            <tbody id="inquiryList"></tbody>
+        </table>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/10.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.0.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.0.0/firebase-firestore.js"></script>
+    <script src="firebase-config.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
